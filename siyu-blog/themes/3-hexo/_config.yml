@@ -11,7 +11,7 @@ blog_path: /
 link:
   theme: color # 链接样式，color: 彩色图标  white: 黑白图标
   items:
-    rss: /atom.xml
+#    rss: /atom.xml
     github: https://github.com/cansijyun
 #    facebook: https://www.facebook.com/faker.tops
 #    twitter:
