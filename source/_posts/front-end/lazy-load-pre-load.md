@@ -2,7 +2,7 @@
 title: 懒加载和预加载
 date: 19-03-03 20:19:47
 tags:
-categories: web原理
+categories: 前端
 ---
 
 ### 什么是懒加载？

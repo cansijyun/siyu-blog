@@ -6,50 +6,7 @@ categories: 其他
 ---
 # 搭建属于你的个人博客（Hexo）
 
-### 第一步：我们需要创建一个GitHup账号及仓库(repository)
-
-创建账号就不用教了吧，如果有不会的可以私聊我手把手的教。然后就是点击图像下方的个人界面去创建自己的仓库了。可以看下面的插图。
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-6676475cee1dc44a.png?imageMogr2/auto-orient/strip|imageView2/2/w/325/format/webp)
-
-屏幕快照 2016-12-17 16.51.42.png
-
-我这里有个库了，所以数字为1 。
-
-
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-94d5424658e5da3d.png?imageMogr2/auto-orient/strip|imageView2/2/w/812/format/webp)
-
-屏幕快照 2016-12-17 16.51.57.png
-
-
-
-点击New创建库
-
-
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-bacf2b4bef95b8d5.png?imageMogr2/auto-orient/strip|imageView2/2/w/477/format/webp)
-
-屏幕快照 2016-12-17 16.52.22.png
-
-
-这里名字如下图格式，前面的名字必须是我们githup上的用户名，后面就是固定的这种格式。好像就是这样说的，管他呢！
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-7fb825104d9e2272.png?imageMogr2/auto-orient/strip|imageView2/2/w/362/format/webp)
-
-屏幕快照 2016-12-17 16.53.07.png
-
-最后点击创建库就行了。
-
-### 第二步：给电脑装上git和Node.js
+### 第一步：给电脑装上git和Node.js
 
 至于为什么装，我也不是很清楚。在这里推荐使用官方程序包安装。
 亲测比用这命令那命令的好用很多。下载[Git安装程序](https://link.jianshu.com/?t=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fgit-osx-installer%2F)，[Node.js安装程序](https://link.jianshu.com/?t=https%3A%2F%2Fnodejs.org%2Fen%2F)安装就行。
@@ -59,7 +16,7 @@ categories: 其他
 > node -v
 > 检查是否安装上以及版本
 
-### 第三步：安装Hexo
+### 第二步：安装Hexo
 
 所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。
 终端输入
@@ -78,7 +35,7 @@ categories: 其他
 
 我们输入hexo检查是否安装成功
 
-### 第四步：创建博客
+### 第三步：创建博客
 
 1.创建目录
 终端输入
@@ -161,36 +118,6 @@ Hexo那里有很多的[主题](https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io
 
 > hexo new 文章名
 
-这样我们就创建一篇新文章
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-df9ddc1f179a1292.png?imageMogr2/auto-orient/strip|imageView2/2/w/639/format/webp)
-
-屏幕快照 2016-12-17 17.38.38.png
-
-下图是系统默认的一篇文章，我们创建的文章也会在这个目录下：
-
-
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-60ff765e704ff2cf.png?imageMogr2/auto-orient/strip|imageView2/2/w/416/format/webp)
-
-屏幕快照 2016-12-17 16.36.16.png
-
-创建完成后
-
-
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-5fdadf76561c04ee.png?imageMogr2/auto-orient/strip|imageView2/2/w/366/format/webp)
-
-屏幕快照 2016-12-17 17.39.11.png
-
-所以，经常使用Vim的也可以使用Vim进行创建文章（格式也要是.md）。先打开文件存放的位置然后执行：
-
 > vim fileName.md
 
 然后编写。文章的语法为`markdown`语法，小伙伴可以多学学这个语法也很简单。简书用的就是这种语法免费给的简单教程[献给写作者的Markdown新手指南](https://www.jianshu.com/p/q81RER)，在这里先谢谢简书这个平台，谢谢[@简叔](https://www.jianshu.com/users/y3Dbcz/latest_articles)。
@@ -202,26 +129,13 @@ Hexo那里有很多的[主题](https://link.jianshu.com/?t=https%3A%2F%2Fhexo.io
 
 > hexo s
 
-成功后如下图：
-
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-e12b7b0c1ea8f7a9.png?imageMogr2/auto-orient/strip|imageView2/2/w/571/format/webp)
-
-屏幕快照 2016-12-17 17.43.51.png
-
-
 到这里先不要操作终端，根据提示我们打开图片里那个网址：
 
+### 部署
 
+`hexo g`
 
-
-
-![img](https://upload-images.jianshu.io/upload_images/3014185-0588ffffb808080c.png?imageMogr2/auto-orient/strip|imageView2/2/w/1054/format/webp)
-
-屏幕快照 2016-12-17 17.46.43.png
-
-然后就可以在终端上使用control+c命令了
+生成public文件夹里面的index.html就是入口文件
 
 2.部署文章
 我们可以装一个自动部署的工具
