@@ -1,5 +1,5 @@
 ---
-title: CommonJS 与 ES6 Modules的区别
+title: 模块化CommonJS 与 ES6 Modules的区别
 date: 19-03-03 20:19:47
 tags:
 categories: 前端
@@ -43,12 +43,54 @@ categories: 前端
   - CommonJS是在内存中的对象，运行时才加载。
   - ES6 Modules是编译时就加载的代码。
 
+
+
 #### ES6 模块与 CommonJS 模块的差异
 
 - 讨论 Node 加载 ES6 模块之前，必须了解 ES6 模块与 CommonJS 模块完全不同。
 - 它们有两个重大差异：
   - CommonJS 模块输出的是一个**值的拷贝**，ES6 模块输出的是**值的引用**。
   - CommonJS 模块是**运行时**加载，ES6 模块是**编译时**输出接口。
+
+CommonJs模块化
+
+```javascript
+// lib.js
+var counter = 3;
+function incCounter() {
+  counter++;
+}
+module.exports = {
+  counter: counter,
+  incCounter: incCounter,
+};
+// main.js
+var mod = require('./lib');
+console.log(mod.counter);  // 3
+mod.incCounter();
+console.log(mod.counter); // 3
+```
+
+
+ES6模块化
+
+```javascript
+// lib.js
+export let counter = 3;
+export function incCounter() {
+  counter++;
+}
+
+// main.js
+import { counter, incCounter } from './lib';
+console.log(counter); // 3
+incCounter();
+console.log(counter); // 4
+```
+
+
+从上面我们看出，CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。而ES6 模块是动态地去被加载的模块取值，并且变量总是绑定其所在的模块。
+
 
 #### 代码举例
 
@@ -123,3 +165,21 @@ categories: 前端
   ##### ES6 Module和CommonJS模块的共同点：
 
 - CommonJS和ES6 Module都可以对引入的对象进行赋值，即对对象内部属性的值进行改变。
+
+
+
+### [字节跳动] common.js 和 es6 中模块引入的区别？(霍小叶)
+
+CommonJS 是一种模块规范，最初被应用于 Nodejs，成为 Nodejs 的模块规范。运行在浏览器端的 JavaScript 由于也缺少类似的规范，在 ES6 出来之前，前端也实现了一套相同的模块规范 (例如: AMD)，用来对前端模块进行管理。自 ES6 起，引入了一套新的 ES6 Module 规范，在语言标准的层面上实现了模块功能，而且实现得相当简单，有望成为浏览器和服务器通用的模块解决方案。但目前浏览器对 ES6 Module 兼容还不太好，我们平时在 Webpack 中使用的 export 和 import，会经过 Babel 转换为 CommonJS 规范。在使用上的差别主要有：
+
+
+
+1. CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。
+
+1. CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。
+
+1. CommonJs 是单个值导出，ES6 Module可以导出多个
+
+1. CommonJs 是动态语法可以写在判断里，ES6 Module 静态语法只能写在顶层
+
+1. CommonJs 的 this 是当前模块，ES6 Module的 this 是 undefined
