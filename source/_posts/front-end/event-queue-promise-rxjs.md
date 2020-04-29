@@ -1190,8 +1190,3 @@ Promise.map = function (list, fn, { concurrency }) {
 }
 
 ```
-
-
-
-# Rxjs观察者模式-订阅
-
