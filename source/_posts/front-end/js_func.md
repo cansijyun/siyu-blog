@@ -1,5 +1,5 @@
 ---
-title: *JS常用函数/方法
+title: *JS常用函数和方法
 date: 19-03-03 20:19:47
 tags:
 categories: 前端
