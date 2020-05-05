@@ -702,3 +702,99 @@ str.repeat(2);//输出结果：hellohello
 　　浏览器还部署了额外的两个方法，`trimLeft()`是`trimStart()`的别名，`trimRight()`是`trimEnd()`的别名。
 
 5、matchAll()方法
+
+
+
+
+
+# ES6新特性以及优势
+
+ES6（ECMAScript2015）的出现，无疑给前端开发人员带来了新的惊喜，它包含了一些很棒的新特性，可以更加方便的实现很多复杂的操作，提高开发人员的效率。下面是一些常用的新特性。他让前端越来越接近后端...
+
+## 1.箭头操作符
+
+如果你会C#或者Java，你肯定知道lambda表达式，ES6中新增的箭头操作符=>便有异曲同工之妙。它简化了函数的书写。操作符左边为输入的参数，而右边则是进行的操作以及返回的值Inputs=>outputs。
+
+ES6中新增箭头操作符用于简化函数的写法，操作符左边为参数，右边为具体操作和返回值。。
+
+```
+// ES6
+var test = (num1, num2) => { return num1 + num2; }
+
+// 传统
+var test = function(num1, num2) {
+    return num1 + num2;
+};
+```
+
+## 2.类的支持
+
+ES6中添加了对类的支持，引入了class关键字（其实class在JavaScript中一直是保留字，目的就是考虑到可能在以后的新版本中会用到，现在终于派上用场了）。JS本身就是面向对象的，ES6中提供的类实际上只是JS原型模式的包装。现在提供原生的class支持后，对象的创建，继承更加直观了，并且父类方法的调用，实例化，静态方法和构造函数等概念都更加形象化。
+
+```
+//类的定义
+class Animal {
+	//ES6中新型构造器
+    constructor(name) {
+        this.name = name;
+    }
+    //实例方法
+    sayName() {
+        console.log('My name is '+this.name);
+    }
+}
+//类的继承
+class Programmer extends Animal {
+    constructor(name) {
+    	//直接调用父类构造器进行初始化
+        super(name);
+    }
+    program() {
+        console.log("I'm coding...");
+    }
+}
+//测试我们的类
+var animal=new Animal('dummy'),
+wayou=new Programmer('wayou');
+animal.sayName();//输出 ‘My name is dummy’
+wayou.sayName();//输出 ‘My name is wayou’
+wayou.program();//输出 ‘I'm coding...’
+```
+
+## 3.字符串模板
+
+字符串模板相对简单易懂些。ES6中允许使用反引号 ` 来创建字符串，此种方法创建的字符串里面可以包含由美元符号加花括号包裹的变量${vraible}。
+
+```
+//产生一个随机数
+var num=Math.random();
+
+//将这个数字输出到console
+console.log(`your num is ${num}`);
+```
+
+## 4.let与const 关键字
+
+可以把let看成var，只是它定义的变量被限定在了特定范围内才能使用，而离开这个范围则无效。const则很直观，用来定义常量，即无法被更改值的变量。
+
+```
+
+
+for (let i=0;i<2;i++)console.log(i);//输出: 0,1
+
+console.log(i);//输出：undefined,严格模式下会报错
+```
+
+## 5.for of 值遍历
+
+我们都知道for in 循环用于遍历数组，类数组或对象，ES6中新引入的for of循环功能相似，不同的是每次循环它提供的不是序号而是值。
+
+```
+var someArray = [ "a", "b", "c" ];
+
+for (v of someArray) {
+    console.log(v);//输出 a,b,c
+
+
+```
+
