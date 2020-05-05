@@ -1,5 +1,5 @@
 ---
-title: JS常用函数/方法
+title: *JS常用函数/方法
 date: 19-03-03 20:19:47
 tags:
 categories: 前端
@@ -437,13 +437,97 @@ var result = arr2.concat(arr3 ).filter(function (v) {
 let union = a.concat(b.filter(v => !a.includes(v))) // [1,2,3,4,5]
 ```
 
-# { }/
+# { }/对象
+
+## 属性和方法
+
+属性是与对象相关的值。
+
+方法是能够在对象上执行的动作。
+
+举例：汽车就是现实生活中的对象。
+
+汽车的属性：
+
+```
+car['name']=Fiat
+
+
+car.name=Fiat
+
+car.model=500
+
+car.weight=850kg
+
+car.color=white 
 
 
 
+```
+
+汽车的方法：
+
+```
+car.start()
+
+car.drive()
+
+car.brake()
+```
 
 
 
+声明对象
+
+```
+var obj= {
+
+  name:"Arvin",
+
+  lastName:"Huang" ,
+
+  whatsName:function(){
+
+     alert(this.name+" "+this.lastName);   
+
+  },
+  
+}
+```
+
+
+
+## 使用内建方法
+
+此例使用 String 对象的 toUpperCase() 方法，把文本转换为大写：
+
+```
+var message = "Hello world!";
+var x = message.toUpperCase();
+```
+
+x 的值，在以上代码执行后将是：
+
+```
+HELLO WORLD!
+```
+
+### *This访问对象的属性和方法
+
+向对象添加方法是在构造器函数内部完成的：
+
+### 实例
+
+```js
+var person = {
+  firstName: "Bill",
+  lastName : "Gates",
+  id     : 678,
+};
+person.name = function() {
+  return this.firstName + " " + this.lastName;
+};  //Bill Gates
+```
 
 
 
