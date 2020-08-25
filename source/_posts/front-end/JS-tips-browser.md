@@ -608,7 +608,16 @@ function deepClone(target) {
 
 
 
-作者：郝晨光
-链接：https://www.jianshu.com/p/f4329eb1bace
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+## && 和||妙用
+
+先判断前面是否数组，不是的话不进行后面判断
+
+```
+Array.isArray(matchRoles) && matchRoles.length
+```
+
+如果为空或者null则用'-'占位
+
+```
+code || '-'
+```
